@@ -1,12 +1,15 @@
-import { Inter } from 'next/font/google'
+import { Layout } from "@/components/layout"
+import { NextPage } from "next"
 
-
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+const Home:NextPage = () => {
   return (
     <>
-      <h1>Cookie master</h1>
+    <Layout>
+     <h1>Cookie master</h1>
+    </Layout>
+     
     </>
   )
 }
+
+export default Home

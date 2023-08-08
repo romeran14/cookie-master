@@ -1,13 +1,24 @@
-import { FC } from 'react';
+import {  FC, PropsWithChildren } from 'react';
 import Head from 'next/head';
-import { Main } from 'next/document';
+import { Navbar } from '../ui';
+
 
 interface Props {
-  prop:string
+  prop?:string
 }
 
-export const layout:FC<Props>= ({prop}) => {
+export const Layout:FC<PropsWithChildren<Props>>= ({children, prop}) => {
   return (
-    <div>{prop}</div>
+    <>
+      <Head>
+
+      </Head>
+      <nav>
+           <Navbar/>
+      </nav>
+      <main style={{ padding:'20px 20px' }} >
+        {children}
+      </main>
+    </>
   )
 }
